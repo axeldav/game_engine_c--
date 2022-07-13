@@ -14,6 +14,8 @@
 //std::string resPath = "/Users/kjellna/dev/cpp21/f13b_v2/resources/";
 //std::string resPath = "../../resources/";
 std::string resPath = "/Users/axeldavidsson/Downloads/f13b_slutkod/resources/";
+//testkommentar med Sabinas resPath
+//std::string resPath = "/Users/sabina/Desktop/CPROG/cprog_project/resources/";
 
 //gameEngine global så att tillgång i klassen Bullet tex
 GameEngine gameEngine;
