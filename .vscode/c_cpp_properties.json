@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "/usr/local/include",
+                "/usr/local/Cellar/sdl2_image/2.0.5/include/SDL2",
+                "/usr/local/Cellar/sdl2/2.0.18/include/SDL2",
+                "/usr/local/Cellar/sdl_mixer/1.2.12_4/include/SDL",
+                "/usr/local/Cellar/gcc/11.2.0_3/include/c++/11",
+                "/usr/local/Cellar/gcc/11.2.0_3/include/c++/11/x86_64-apple-darwin19",
+                "/usr/local/Cellar/gcc/11.2.0_3/include/c++/11/tr1",
+                "/Users/axeldavidsson/Downloads/f13b_slutkod/include",
+                "/Users/axeldavidsson/Downloads/f13b_slutkod/**",
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/**"
+            ],
+            "compilerPath": "/usr/local/bin/gcc-11",
+            "intelliSenseMode": "macos-gcc-x64",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
