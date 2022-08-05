@@ -27,9 +27,6 @@ class Pistol : public Component { //ärver från Component
 		int x, y; 
 		int counter = 0;
 		int kill_counter;
-
-        Pistol(const Pistol&) = delete;
-        const Pistol& operator = (const Pistol&) = delete;
 };
 
 #endif

@@ -26,9 +26,6 @@ class Enemy : public Component {
         int intervall;
         double speed;
         std::string img_path;	
-
-        Enemy(const Enemy&) = delete;
-        const Enemy& operator = (const Enemy&) = delete;
 };
 
 #endif

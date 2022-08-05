@@ -18,6 +18,9 @@ protected:
 	Component(int x, int y, int w, int h) : rect{ x,y,w,h } {}
 	SDL_Rect rect;
 	std::string tag;
+private:
+	Component(const Component&) = delete;
+	const Component& operator = (const Component&) = delete;
 };
 
 #endif

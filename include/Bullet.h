@@ -22,10 +22,6 @@ class Bullet : public Component {  //ärver från component
 		SDL_Texture* texture;
 		int counter; //räkna ticks med counter
 		Pistol *pistol;
-
-        Bullet(const Bullet&) = delete;
-        const Bullet& operator = (const Bullet&) = delete;
-        
 };
 
 //ska den vara här eller i cpp filen??
