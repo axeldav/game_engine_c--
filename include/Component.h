@@ -7,8 +7,7 @@ class Component
 {
 public: 
 	virtual ~Component(){}
-	virtual void mouseDown(int x, int y) {} // tar kordinater för där musklick har skett 
-	virtual void mouseUp(int x, int y) {}
+	virtual void mouseDown(int x, int y) {} // tar kordinater för där musklick har skett
 	virtual void draw() = 0;
 	SDL_Rect getRect() { return rect; }
 	virtual void tick() {}
