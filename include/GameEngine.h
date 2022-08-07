@@ -5,7 +5,7 @@
 #include "Label.h"
 #include <vector>
 #include "System.h"
-#include "Pistol.h"
+#include "Player.h"
 
 
 class GameEngine
@@ -13,19 +13,26 @@ class GameEngine
 public:
 	void add(Component* comp);
 	void remove(Component* comp);
-	bool wait_for_click_window(std::string start_message);
+	void showMenu();
 	void run();
-	void game_loop(std::string before_game_text, std::string after_game_text);
-	void quit_run_loop();
-	int get_comps_size();
-	Component* get_comp_at_index(int i);
+	void setQuitGame(bool boolVal);
+	void setQuitRun(bool boolVal);
 	int getCounter();
+	void setPlayer(Player* player);
+	std::vector<Component*>::iterator compsBegin()  {return comps.begin();}
+	std::vector<Component*>::iterator compsEnd()  {return comps.end();}
 private:
 	int counter = 1;
+	bool quitGame = false;
+	bool quitRun = false;
+	Player* player;
 	std::vector<Component*> comps;
 	std::vector<Component*> added, removed;
 	std::vector<Component*> enemyList; 
-	bool quit_run;
+	void removeEnemiesAndBulletsFromGame();
+	void resetGameArena();
+	void removeOldComponents(); //removes componenets from comps
+	void addNewComponents(); //add newly added components to
 };
 
 extern GameEngine gameEngine;

@@ -21,7 +21,7 @@ System::System() {
 	Mix_PlayChannel(-1, musik, -1);
 
 	TTF_Init(); //sätter igång font 
-	font = TTF_OpenFont( (resPath + "fonts/arial.ttf").c_str(), 20);
+	font = TTF_OpenFont( (resPath + "fonts/arial.ttf").c_str(), 15);
 }
 
 System::~System() {

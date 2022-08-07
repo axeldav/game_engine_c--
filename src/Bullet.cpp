@@ -1,10 +1,14 @@
 #include "Bullet.h"
 #include "System.h"
+#include "GameEngine.h"
 
-Bullet* Bullet::getInstance(int x, Pistol* p){
+extern GameEngine gameEngine; 
+
+Bullet* Bullet::getInstance(int x, Player* p){
 	return new Bullet(x, p);
 }
-Bullet::Bullet(int x, Pistol* p) : Component(x, 500, 5, 20), pistol(p) {
+
+Bullet::Bullet(int x, Player* p) : Component(x, 500, 5, 20), player(p) {
 	// Path to your own 'images' folder.
 	//texture = IMG_LoadTexture(sys.ren, "/Users/kjellna/dev/cpp21/f13b/images/dot40x40.bmp");
 	texture = IMG_LoadTexture(sys.get_ren(), (resPath + "images/dot40x40.bmp").c_str() );
@@ -18,6 +22,7 @@ void Bullet::draw() {
 	const SDL_Rect &rect = getRect();
 	//SDL_RenderCopy(sys.ren, texture, NULL, &getRect());
 	SDL_RenderCopy(sys.get_ren(), texture, NULL, &rect);
+	
 }
 void Bullet::tick() { //ett tick i varje loop, eller liknande
 			counter++;
@@ -27,19 +32,16 @@ void Bullet::tick() { //ett tick i varje loop, eller liknande
 				rect.y = rect.y - 5; //bullet flyger uppåt
 }
 void Bullet::collision(){
-	for(int i = 0; i < gameEngine.get_comps_size(); i++){
-		auto c = gameEngine.get_comp_at_index(i);
-		const SDL_Rect &rect_b = getRect();
-		const SDL_Rect &rect_e = c->getRect();
-		if(SDL_HasIntersection(  &rect_b , &rect_e ) ) {
-		    if(tag == "bullet" && c->get_tag() == "enemy" ) {
-			    
-				//det är endast för denna raden som pistol behövs, Det vore känske bättre om spelmotorn hade en label isåfall. och den uppdaterades. 
-				pistol->add_kill();	 
-
-        	    gameEngine.remove(c);
-			    gameEngine.remove(this);
-		    }
+	
+	for(auto i = gameEngine.compsBegin(); i != gameEngine.compsEnd(); i++ ) {
+		const SDL_Rect &rect_a = getRect();
+		const SDL_Rect &rect_b = (*i)->getRect(); //de-referencing 
+		if(SDL_HasIntersection(&rect_a, &rect_b)){
+			if((*i)->getTag() == "enemy"){ 
+				player->add_kill();
+				gameEngine.remove((*i));
+				gameEngine.remove(this);
+			}
 		}
 	}
 }
