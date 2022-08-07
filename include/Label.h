@@ -15,6 +15,7 @@ class Label: public Component // label ärver publikt från Component
 		void collision(){}
 		std::string getText() const;
 		void setText(std::string newText);
+		void mouseDown(int x, int y);
 		~Label();
 	protected:
 		Label(int x, int y, int w, int h, std::string txt); // protected för att man ej ska komma åt constructorn och kunnna skapa ett objekt på stacken

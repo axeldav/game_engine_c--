@@ -13,7 +13,7 @@ public:
 	SDL_Rect getRect() { return rect; }
 	virtual void tick() {}
 	virtual void collision() = 0;
-	virtual std::string get_tag(){ return tag; }
+	virtual std::string getTag(){ return tag; }
 protected:
 	Component(int x, int y, int w, int h) : rect{ x,y,w,h } {}
 	SDL_Rect rect;
