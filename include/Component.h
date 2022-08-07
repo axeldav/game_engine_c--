@@ -7,8 +7,7 @@ class Component
 {
 public: 
 	virtual ~Component(){}
-	virtual void mouseDown(int x, int y) {} // tar kordinater för där musklick har skett 
-	virtual void mouseUp(int x, int y) {}
+	virtual void mouseDown(int x, int y) {} // tar kordinater för där musklick har skett
 	virtual void draw() = 0;
 	SDL_Rect getRect() { return rect; }
 	virtual void tick() {}
@@ -18,6 +17,9 @@ protected:
 	Component(int x, int y, int w, int h) : rect{ x,y,w,h } {}
 	SDL_Rect rect;
 	std::string tag;
+private:
+	Component(const Component&) = delete;
+	const Component& operator = (const Component&) = delete;
 };
 
 #endif

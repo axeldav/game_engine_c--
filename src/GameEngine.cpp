@@ -104,10 +104,6 @@ void GameEngine::run() {  //här är while loopen där programmet körs
 					for (Component* c : comps)  // comps är en lista med alla Components
 						c->mouseDown(event.button.x, event.button.y); // skickar med eventets x och y kordinat till componenternas mousedown funktioner
 					break;
-				case SDL_MOUSEBUTTONUP:
-					for (Component* c : comps)
-						c->mouseUp(event.button.x, event.button.y);
-					break;
 			} //switch
 		} //inre while
 

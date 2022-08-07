@@ -19,11 +19,7 @@ class Bullet : public Component {  //ärver från component
 	private:
 		SDL_Texture* texture;
 		int counter; //räkna ticks med counter
-		Player *player;
-
-        Bullet(const Bullet&) = delete;
-        const Bullet& operator = (const Bullet&) = delete;
-        
+		Player *player;        
 };
 
 //ska den vara här eller i cpp filen??

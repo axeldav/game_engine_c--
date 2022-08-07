@@ -22,8 +22,5 @@ class Label: public Component // label ärver publikt från Component
 	private:
 		std::string text; 
 		SDL_Texture* texture;
-
-		Label(const Label&) = delete;
-        const Label& operator = (const Label&) = delete;
 };
 #endif
