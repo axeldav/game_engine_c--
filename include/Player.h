@@ -32,8 +32,6 @@ class Player : public Component { //ärver från Component
 		int counter = 0;
 		int kill_counter;
 
-        Player(const Player&) = delete;
-        const Player& operator = (const Player&) = delete;
 };
 
 #endif
