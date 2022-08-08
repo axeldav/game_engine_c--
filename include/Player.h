@@ -3,8 +3,8 @@
  * 
  * 
 ***/
-#ifndef PISTOL_H
-#define PISTOL_H
+#ifndef PLAYER_H
+#define PLAYER_H
 //#include "Label.h"
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
