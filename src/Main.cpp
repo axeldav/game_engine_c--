@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "EnemyGenerator.h"
 #include "EnemyBear.h"
+#include "EnemyDog.h"
 
 
 #include <iostream>
@@ -30,10 +31,8 @@ EnemyGenerator eGenerator;
 
 int main(int argc, char** argv) {
 
-
-	EnemyGenerator eGenerator;
 	eGenerator.addEnemy(EnemyBear::getInstance("images/bear.png", 130, 2.0));
-	eGenerator.addEnemy(EnemyBear::getInstance("images/dog.png", 1454, 1.5));
+	eGenerator.addEnemy(EnemyDog::getInstance("images/dog.png", 1454, 1.5));
 
 	
 	Label* lbl = Label::getInstance(10, 10, 100, 70, "0"); //skapa komponenter
