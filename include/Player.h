@@ -28,7 +28,6 @@ class Player : public Component { //ärver från Component
 		SDL_Texture* texture;
 		Label* label;
 		int x, y; 
-		int counter = 0;
 		int kill_counter;
 
 };
