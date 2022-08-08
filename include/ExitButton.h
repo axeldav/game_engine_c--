@@ -9,14 +9,9 @@ class ExitButton : public Label
     public:
         static ExitButton* getInstance(int x, int y, int w, int h, std::string txt);
         void mouseDown(int x, int y);
-        virtual ~ExitButton(){
-            
-        }
-
+        virtual ~ExitButton(){}
     protected:
         ExitButton(int x, int y, int w, int h, std::string txt);
-   
-
 };
 
 #endif

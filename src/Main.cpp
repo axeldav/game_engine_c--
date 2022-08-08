@@ -28,52 +28,12 @@ GameEngine gameEngine;
 EnemyGenerator eGenerator;
 
 
-//int memorycounter = 0; 
-
-/*
-//overriding new-operator globally
-void* operator new(size_t size)
-{
-	printf("allocated ");
-	//printf("%d", size);
-	printf("\n");
-	memorycounter++;
-
-
-	return malloc(size);
-}
-
-void operator delete(void* memory) noexcept
-{
-	printf("free ");
-	printf("\n");
-	memorycounter--;
-	printf("memory counter: ");
-	printf("%d", memorycounter);
-	printf("\n");
-	free(memory);
-	
-}
-*/
-
 int main(int argc, char** argv) {
 
 
-	/**
-	 * parameters
-	 * 1. bilden, som ska användas för enemy
-	 * 2. intervall - frekvensen den ska dyka upp 
-	 * 3. speed - hur snabbt fienden rör sig
-	 * */
-	/*
-	eGenerator.addEnemyTypeToList("images/dog.png", 1466, 1.5);
-	eGenerator.addEnemyTypeToList("images/bear.png", 130, 2.0);
-	*/
-
+	EnemyGenerator eGenerator;
 	eGenerator.addEnemy(EnemyBear::getInstance("images/bear.png", 130, 2.0));
 	eGenerator.addEnemy(EnemyBear::getInstance("images/dog.png", 1454, 1.5));
-
-	//eGenerator.addEnemy(EnemyBear::getInstance("images/bear.png", 130, 2.0));
 
 	
 	Label* lbl = Label::getInstance(10, 10, 100, 70, "0"); //skapa komponenter
@@ -82,11 +42,7 @@ int main(int argc, char** argv) {
 	gameEngine.setPlayer(player);
 	gameEngine.add(player);
 
-
-
 	gameEngine.showMenu();
-	//gameEngine.game_loop("Klick mouse to play", "You lost :(");
-
 
 	delete player;
 	delete lbl;

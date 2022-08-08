@@ -14,7 +14,7 @@ void ExitButton::mouseDown(int x, int y){
 
     const SDL_Rect &rect = getRect();
 
-    if (x > rect.x && x < (rect.x + rect.w)){ //här är det nåt fel
+    if (x > rect.x && x < (rect.x + rect.w)){
         if (y > rect.y && y < (rect.y + rect.h) ){
 		    gameEngine.setQuitGame(true);
         }
