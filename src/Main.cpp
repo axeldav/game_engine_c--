@@ -31,20 +31,28 @@ EnemyGenerator eGenerator;
 
 int main(int argc, char** argv) {
 
+	/*
+	* Lägger till de olika fienderna man vill använda
+	* param:
+	* bildfilen
+	* interval - hur ofta fienden ska komma
+	* 
+	**/
 	eGenerator.addEnemy(EnemyBear::getInstance("images/bear.png", 130, 2.0));
 	eGenerator.addEnemy(EnemyDog::getInstance("images/dog.png", 1454, 1.5));
 
 	
-	Label* lbl = Label::getInstance(10, 10, 100, 70, "0"); //skapa komponenter
-	gameEngine.add(lbl);
-	Player* player = new Player(lbl, "images/rocket.png");
+	//hur många man har skjutit
+	Label* killLabel = Label::getInstance(10, 10, 100, 70, "0"); //skapa komponenter
+	gameEngine.add(killLabel);
+	Player* player = new Player(killLabel, "images/rocket.png");
 	gameEngine.setPlayer(player);
 	gameEngine.add(player);
 
 	gameEngine.showMenu();
 
 	delete player;
-	delete lbl;
+	delete killLabel;
 	
 	return 0;
 }

@@ -49,6 +49,12 @@ void Enemy::tick(){
 		rect.y = rect.y + speed;
 }
 
+void Enemy::addToGame(){
+	if ((gameEngine.getCounter() % intervall) == 0){
+			gameEngine.add(clone());
+		}
+}
+
 int Enemy::getIntervall(){
     return intervall;
 }

@@ -17,6 +17,7 @@ class Enemy : public Component {
         std::string getImg();
         double getSpeed();
         virtual Enemy* clone() = 0;
+        virtual void addToGame();
     
     protected:
         Enemy(int x, std::string img_path, //x är x-led, där enemy dyker upp på skärmen, den är random. ej use input.

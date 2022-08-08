@@ -11,8 +11,6 @@ void EnemyGenerator::addEnemy(Enemy* e){
 
 void EnemyGenerator::addEnemyToGame(){
 	for (Enemy* e : enemies){
-		if ((gameEngine.getCounter() % e->getIntervall()) == 0){
-			gameEngine.add(e->clone());
-		}
+		e->addToGame();
 	}
 }

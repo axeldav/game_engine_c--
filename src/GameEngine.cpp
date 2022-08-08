@@ -88,7 +88,6 @@ void GameEngine::addNewComponents(){
 void GameEngine::run() {  //här är while loopen där programmet körs
 	
 
-	//quitR = false;
 	Uint32 tickInterval = 1000 / FPS; //hur många millisekunder det ska dröja mellan olika ticks
 	while (!quitRun) {
 
