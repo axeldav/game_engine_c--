@@ -5,13 +5,8 @@
 
 extern GameEngine gameEngine; 
 
-/**
- * parameters:
- * i - interval
- * s - speed
- * */
-
-Enemy::Enemy(int x, std::string img_path, int intervall, int speed) : Component(x, 0, 30, 30){
+Enemy::Enemy(int x, std::string img_path, int intervall, int speed) : Component(x, 0, 30, 30)
+{
 	texture = IMG_LoadTexture(sys.get_ren(), (resPath + img_path).c_str() ); 
 	tag = "enemy";
 	this->img_path = img_path;
@@ -19,44 +14,55 @@ Enemy::Enemy(int x, std::string img_path, int intervall, int speed) : Component(
 	this->speed = speed;
 }
 
-Enemy::~Enemy(){
+Enemy::~Enemy()
+{
 	SDL_DestroyTexture(texture);
 }
 
-void Enemy::draw(){
+void Enemy::draw()
+{
 	const SDL_Rect &rect = getRect();
 	SDL_RenderCopy(sys.get_ren(), texture, NULL, &rect);
 }
 
-void Enemy::tick(){
+void Enemy::tick()
+{
     counter++;
-	if (rect.y >= sys.get_win_height()){
+	if (rect.y >= sys.get_win_height())
+	{
 		gameEngine.setQuitRun(true);
 	} 		 
 	else if (counter % 1 == 0) 
 		rect.y = rect.y + speed;
 }
 
-void Enemy::collision(){
-	for(auto i = gameEngine.compsBegin(); i != gameEngine.compsEnd(); i++ ) {
+void Enemy::collision()
+{
+	for(auto i = gameEngine.compsBegin(); i != gameEngine.compsEnd(); i++) 
+	{
 		const SDL_Rect &rect_a = getRect();
 		const SDL_Rect &rect_b = (*i)->getRect();
-		if(SDL_HasIntersection(&rect_a, &rect_b)){
-			if((*i)->getTag() == "player"){ 
+		if(SDL_HasIntersection(&rect_a, &rect_b))
+		{
+			if((*i)->getTag() == "player")
+			{ 
 				gameEngine.setQuitRun(true);
 			}
 		}
 	}
 }
 
-int Enemy::getIntervall(){
+int Enemy::getIntervall()
+{
     return intervall;
 }
 
-double Enemy::getSpeed(){
+double Enemy::getSpeed()
+{
     return speed; 
 }
 
-std::string Enemy::getImg(){
+std::string Enemy::getImg()
+{
     return img_path;
 }
