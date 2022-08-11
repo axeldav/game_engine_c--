@@ -48,16 +48,3 @@ void Label::setText(std::string newText)
 	texture = SDL_CreateTextureFromSurface(sys.get_ren(), surf); 
 	SDL_FreeSurface(surf); 
 }	
-
-void Label::mouseDown(int x, int y)
-{	
-	const SDL_Rect &rect = getRect();
-
-	if (x > rect.x && x < (rect.x + rect.w)){
-		if (y > rect.y && y < (rect.y + rect.h)){
-			if(getText() == "Play"){
-				gameEngine.run();
-			}
-		}
-	}
-}

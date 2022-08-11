@@ -13,7 +13,7 @@ public:
 	void collision(){}
 	std::string getText() const;
 	void setText(std::string newText);
-	void mouseDown(int x, int y);
+	void mouseDown(int x, int y) {}
 	~Label();
 protected:
 	Label(int x, int y, int w, int h, std::string txt);

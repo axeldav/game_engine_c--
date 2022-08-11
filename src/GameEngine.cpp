@@ -138,7 +138,7 @@ int GameEngine::getCounter()
 
 void GameEngine::showMenu()
 {
-	Label* play = Label::getInstance((sys.get_win_width()/2) - 150, 
+	Label* play = PlayButton::getInstance((sys.get_win_width()/2) - 150, 
 									sys.get_win_height() * 1/4,
 									 300, 70, "Play");
 
