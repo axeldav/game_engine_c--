@@ -11,7 +11,7 @@ class Enemy : public Component {
 		static Enemy* getInstance(std::string img_path, int intervall, int speed);
 		virtual ~Enemy();
 		virtual void draw();
-		virtual void collision(){};
+		virtual void collision();
 		virtual void tick();
         int getIntervall();
         std::string getImg();

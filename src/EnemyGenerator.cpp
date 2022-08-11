@@ -12,4 +12,4 @@ void EnemyGenerator::addEnemyToGame()
 	for (Enemy* e : enemies){
 		e->addToGame();
 	}
-}s
+}

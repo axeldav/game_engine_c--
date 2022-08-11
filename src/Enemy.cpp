@@ -30,10 +30,26 @@ void Enemy::tick()
     counter++;
 	if (rect.y >= sys.get_win_height())
 	{
+		gameEngine.remove(this);
 		gameEngine.setQuitRun(true);
 	} 		 
 	else if (counter % 1 == 0) 
 		rect.y = rect.y + speed;
+}
+
+void Enemy::collision(){
+	for(auto i = gameEngine.compsBegin(); i != gameEngine.compsEnd(); i++){
+		const SDL_Rect &rect_a = getRect();
+		const SDL_Rect &rect_b = (*i)->getRect();
+		if(SDL_HasIntersection(&rect_a, &rect_b)){
+			if((*i)->getTag() == "player"){
+				gameEngine.remove(this);
+				gameEngine.setQuitRun(true);
+			}
+		}
+
+
+	}
 }
 
 void Enemy::addToGame(){
