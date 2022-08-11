@@ -7,7 +7,6 @@
 #include "System.h"
 #include "Player.h"
 
-
 class GameEngine
 {
 public:
@@ -31,11 +30,10 @@ private:
 	std::vector<Component*> enemyList; 
 	void removeEnemiesAndBulletsFromGame();
 	void resetGameArena();
-	void removeOldComponents(); //removes componenets from comps
-	void addNewComponents(); //add newly added components to
+	void removeOldComponents(); 
+	void addNewComponents(); 
 };
 
 extern GameEngine gameEngine;
-
 
 # endif

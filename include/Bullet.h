@@ -6,22 +6,20 @@
 
 class Player; 
 
-class Bullet : public Component {  //ärver från component
-	public:
-		static Bullet* getInstance(int x, Player* p);
-		~Bullet();
-		void draw();
-		void tick();
-		void collision();
-    protected:
-        Bullet(int x, Player* p);
-	private:
-		SDL_Texture* texture;
-		int counter; //räkna ticks med counter
-		Player *player;        
+class Bullet : public Component 
+{  
+public:
+	static Bullet* getInstance(int x, Player* p);
+	~Bullet();
+	void draw();
+	void tick();
+	void collision();
+protected:
+    Bullet(int x, Player* p);
+private:
+	SDL_Texture* texture;
+	int counter; 
+	Player *player;        
 };
-
-//ska den vara här eller i cpp filen??
-//extern GameEngine gameEngine;
 
 #endif 

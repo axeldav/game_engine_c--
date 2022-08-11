@@ -20,8 +20,8 @@ class Enemy : public Component {
         virtual void addToGame();
     
     protected:
-        Enemy(int x, std::string img_path, //x är x-led, där enemy dyker upp på skärmen, den är random. ej use input.
-        int intervall, int speed); //intervall som enemy-objekt dyker upp på skärmen med   //speed som enemy-objketet har på skärmen
+        Enemy(int x, std::string img_path, 
+        int intervall, int speed);
 	private:
 		SDL_Texture* texture;
 		int counter = 0;
