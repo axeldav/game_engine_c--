@@ -15,8 +15,7 @@
 #include <iostream>
 #include <stdio.h>
 
-std::string resPath = "/Users/axeldavidsson/Downloads/f13b_slutkod/resources/";
-//std::string resPath = "/Users/sabina/Desktop/CPROG/cprog_project/resources/";
+std::string resPath = "../../resources/";
 
 GameEngine gameEngine;
 
