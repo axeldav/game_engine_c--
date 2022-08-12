@@ -4,7 +4,10 @@
             "type": "cppbuild",
             "label": "build",
             "command": "make",
-            "args": [],
+            "args": [
+                "--std",
+                "c++17",
+            ],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
