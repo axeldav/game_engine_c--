@@ -1,7 +1,6 @@
 #include "PlayButton.h"
 #include "GameEngine.h"
 
-
 PlayButton* PlayButton::getInstance(int x, int y, int w, int h, std::string txt)
 {
     return new PlayButton(x,y,w,h,txt);

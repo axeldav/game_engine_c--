@@ -10,8 +10,6 @@
 #include "EnemyGenerator.h"
 #include "EnemyBear.h"
 #include "EnemyDog.h"
-
-
 #include <iostream>
 #include <stdio.h>
 
@@ -20,7 +18,6 @@ std::string resPath = "../../resources/";
 GameEngine gameEngine;
 
 EnemyGenerator eGenerator;
-
 
 int main(int argc, char** argv) {
 

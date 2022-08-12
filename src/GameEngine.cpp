@@ -27,7 +27,6 @@ void GameEngine::setPlayer(Player* player)
 	this->player = player;
 }
 
-
 void GameEngine::removeEnemiesAndBulletsFromGame()
 {
 	for (vector<Component*>::iterator i = comps.begin(); i != comps.end();)
@@ -125,9 +124,7 @@ void GameEngine::run()
 			SDL_Delay(delay);
 
 		counter++;	
-	
 	}
-
 	resetGameArena();
 }
 
@@ -138,7 +135,7 @@ int GameEngine::getCounter()
 
 void GameEngine::showMenu()
 {
-	Label* play = PlayButton::getInstance((sys.get_win_width()/2) - 150, 
+	PlayButton* play = PlayButton::getInstance((sys.get_win_width()/2) - 150, 
 									sys.get_win_height() * 1/4,
 									 300, 70, "Play");
 

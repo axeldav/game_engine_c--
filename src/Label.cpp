@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 Label* Label::getInstance(int x, int y, int w, 
 	int h, std::string txt) 
 {
@@ -21,7 +20,6 @@ Label::Label(int x, int y, int w, int h,
 	texture = SDL_CreateTextureFromSurface(sys.get_ren(), surf); 
 	SDL_FreeSurface(surf); 
 }
-
 
 void Label::draw() 
 {
